@@ -1,0 +1,320 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Data Flow in JavaScript Applications</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/custom/style.css">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/obsidian.css">
+		<style>
+			.reveal blockquote {
+				box-shadow: none;
+			}
+			blockquote:before,
+			blockquote:after {
+				color: #D12026;
+				content: "“";
+				position: absolute;
+				font-size: 120px;
+				top: -30px;
+				left: -30px;
+			}
+			blockquote:after {
+				content: "”";
+				top: auto;
+				bottom: -30px;
+				left: auto;
+				right: -30px;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Data Flow in JavaScript Applications</h1>
+				</section>
+
+				<section data-background="#d12026" data-background-transition="zoom" class="bg-color">
+					<h2>About Me</h2>
+					<p class="fragment">Head Instructor & Development Lead at HackerYou</p>
+					<p class="fragment">@Rchristiani on Twitter</p>
+					<p class="fragment">ryanchristiani.com</p>
+					<p class="fragment">letslearnes6.com</p>
+					<p class="fragment">NodeSchoolTO Organizer</p>
+				</section>
+
+				<section data-background="#d12026" data-background-transition="zoom" class="bg-color">
+					<img src="imgs/RyanVideo_ES6_Title_02.jpg">
+				</section>
+				
+				<section data-background="#ffdb66" data-background-transition="zoom">
+					<img src="imgs/lets-code-along.png" alt="">
+				</section>
+
+				<section>
+					<ul>
+						<li>What is a design pattern</li>
+						<li>Look some common patterns</li>
+						<li>Pub/Sub</li>
+						<li>Flux</li>
+						<li>Redux</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>What is a design pattern?</h2>
+					<p>Design pattern is a reusable solution to a common problem. </p>
+				</section>
+
+				<section>
+					<blockquote>Each pattern describes a problem which occurs over and over again in our environment, and then describes the core solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice.</blockquote>
+					<cite>Christopher Alexander</cite>
+				</section>
+
+				<section>
+					<p>Christopher Alexander is actually an Architect. We is considered to be the father of the pattern language movement.</p>
+				</section>
+				
+				<section>
+					<p>Alexander's work in pattern languages for architecture helped to influence programming language design. This is not a new concept, the concept of pattern languages and design patterns goes back to the 1960's.</p>
+				</section>
+
+				<section>
+					<p>These patterns up us identify a problem and pick the appropriate solution. Understanding these patterns allows us to pick from a catalog of trusted abstractions.</p>
+				</section>
+					
+				<section>
+					<blockquote>For instance, in Christopher Alexander's work, bus stops and waiting rooms in a surgery center are both within the context for the pattern "A PLACE TO WAIT".</blockquote>
+					<cite>Wikipedia</cite>
+				</section>
+
+				<section>
+					<img src="imgs/design_patterns_cover.jpeg" alt="">
+				</section>
+
+				<section>
+					<h2>Gang of Four book</h2>
+					<p>In 1994 a book was released by four authors, referred to as the gang of four. This is has been sort of a required reading when it comes to design patterns.</p>
+				</section>
+
+				<section>
+					<p>All the examples in the book at in C++/SmallTalk, so unless you know those languages, or the concepts behind them, it might be hard to reason about!</p>
+				</section>
+				
+				<section>
+					<img src="imgs/js_design_patterns.jpg" alt="">
+				</section>
+
+				<section>
+					<h2>MVC</h2>
+					<p>The MVC or Model View Controller pattern is actual made up of many different pattern, one being the Observer or Publish/Subscribe pattern.</p>
+					<p>Learning about these patterns can help you dissect larger patterns out there!</p>
+				</section>
+
+				<section>
+					<h2>Pattern examples you might not know you are using.</h2>
+				</section>
+
+				<section>
+					<h3>Namespacing</h3>
+<pre><code class="language-javascript">
+  const app = {};
+
+  app.events = function() {};
+  app.init = function() {};
+
+</code></pre>
+				</section>
+				
+				<section>
+					<p>Using a single object to contain our application, we have using a simple pattern to prevent pollution of the global scope.</p>
+					<p>This pattern is simple but really solves some issues for us.</p>
+				</section>
+
+				<section>
+					<ul style="list-style: none; padding: 0; text-align: center;">
+						<li class="fragment">💥 Name clashes 💥</li>
+						<li class="fragment">☁️ Pollution of global scope ☁️</li>
+						<li class="fragment">🍝 Solution to spagetti code 🍝</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Module Pattern</h3>
+<pre><code class="language-javascript">
+  const person = (function() {
+      let age = 31;
+      return {
+          getAge() {
+              return age;
+          }
+          birthday() {
+              age = age + 1;
+              return age;
+          }
+      }
+  })();
+
+</code></pre>
+				</section>
+
+				<section>
+					<p>The Module pattern is a pattern specific to JavaScript that allows us to reduce global variables and contain the implementation of our code hidden from the outside world.</p>
+				</section>
+
+				<section>
+					<p>Through the power of closures, functions and objects we are able to create privacy in our code, and implement and interface(the returned object) that we choose. This gives of a great amount of control!</p>
+				</section>
+
+				<section>
+<pre><code class="language-javascript">
+  const person = (function() {
+    let age = 31; //Not accessible to the outside world
+    return {                 //
+        getAge() {           //
+            return age;      //
+        }                    //
+        birthday() {         // The public interface
+            age = age + 1;   //
+            return age;      //
+        }                    //
+     }                       //
+  })();
+
+</code></pre>
+				</section>
+
+				<section>
+					<ul style="list-style: none; padding: 0; text-align: center;">
+						<li class="fragment">🕵️ Create privacy 🕵️</li>
+						<li class="fragment">🎛 Define our interface 🎛</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Managing State</h2>
+				</section>
+
+				<section>
+					<h2>Publish/Subscribe</h2>
+					<p>This is a pattern is a popular variation on the Observer pattern. It allows for a simple events system.</p>
+				</section>
+
+				<section>
+					<p>In our case we will use a very simple implementation of this pattern. And object that has a <code>subscribe</code> and <code>publish</code> method.</p>
+				</section>
+
+				<section>
+					<h3>Publish</h3>
+<pre><code class="language-javascript">
+  publish(eventName, data) {
+    if(!listeners[eventName] || listeners[eventName].length === 0) 
+      return
+
+    listeners[eventName].forEach((fn) => {
+      fn(data);
+    });
+  } 
+
+</code></pre>
+				</section>
+
+				<section>
+					<h3>Subscribe</h3>
+<pre><code class="language-javascript">
+  subscribe(eventName, fn) {
+    if(!listeners[eventName]) {
+      listeners[eventName] = [];
+    }
+    let index = listeners[eventName].push(fn) - 1;
+    return {
+      remove: ()=> {
+        listeners[eventName].splice(index,1);
+      }
+    }
+  }
+
+</code></pre>
+				</section>
+
+				<section data-background="#00bcd4">
+					<iframe src="pubsub/index.html" frameborder="0" height="600" width="800"></iframe>
+				</section>
+				
+				<section>
+					<h3>Subscribe to an action</h3>
+<pre><code class="language-javascript">
+  //Register an event and callback
+  pubsub.subscribe('increase',(data) => {
+    //Code in here
+  });
+
+</code></pre>
+				</section>
+	
+				<section>
+					<h3>Publish an action</h3>
+<pre><code class="language-javascript">
+  pubsub.publish('increase', 1);
+
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Flux</h2>
+				</section>
+
+				<section>
+					<p>A pattern introduced to help solve state issues in their app.</p>
+				</section>
+
+				<section data-background="#ffc107">
+					<iframe src="flux/index.html" frameborder="0" height="600" width="800"></iframe>
+					
+				</section>
+
+				<section data-background="#9C27B0">
+					<iframe src="redux/index.html" frameborder="0" height="600" width="800"></iframe>
+					
+				</section>
+
+				<section>
+					<h1>Thanks! 👋</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
