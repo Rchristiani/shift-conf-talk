@@ -31,6 +31,9 @@
 				left: auto;
 				right: -30px;
 			}
+			.arrows {
+				color: #999;
+			}
 		</style>
 
 		<!-- Printing and PDF exports -->
@@ -95,7 +98,7 @@
 				</section>
 
 				<section>
-					<p>These patterns up us identify a problem and pick the appropriate solution. Understanding these patterns allows us to pick from a catalog of trusted abstractions.</p>
+					<p>These patterns help us identify problems and pick the appropriate solution. Understanding these patterns allow us to pick from a catalog of trusted abstractions.</p>
 				</section>
 					
 				<section>
@@ -121,9 +124,16 @@
 				</section>
 
 				<section>
+					<h2>These patterns are everywhere</h2>
+				</section>
+
+				<section>
 					<h2>MVC</h2>
 					<p>The MVC or Model View Controller pattern is actual made up of many different pattern, one being the Observer or Publish/Subscribe pattern.</p>
-					<p>Learning about these patterns can help you dissect larger patterns out there!</p>
+				</section>
+
+				<section>
+					<p>Learning about these patterns can help <br/>you dissect larger patterns!</p>
 				</section>
 
 				<section>
@@ -174,17 +184,17 @@
 				</section>
 
 				<section>
-					<p>The Module pattern is a pattern specific to JavaScript that allows us to reduce global variables and contain the implementation of our code hidden from the outside world.</p>
+					<p>The Module pattern is a pattern we use in JavaScript that allows us to reduce global variables and contain the implementation of our code hidden from the outside world.</p>
 				</section>
 
 				<section>
-					<p>Through the power of closures, functions and objects we are able to create privacy in our code, and implement and interface(the returned object) that we choose. This gives of a great amount of control!</p>
+					<p>Through the power of closures, functions and objects we are able to create privacy in our code, and implement an interface(the returned object) of our choosing. This gives of a great amount of control!</p>
 				</section>
 
 				<section>
 <pre><code class="language-javascript">
   const person = (function() {
-    let age = 31; //Not accessible to the outside world
+    let age = 31; // Private
     return {                 //
         getAge() {           //
             return age;      //
@@ -211,12 +221,25 @@
 				</section>
 
 				<section>
+					<img src="imgs/pepe_silvia.gif" alt="">
+				</section>
+
+				<section>
 					<h2>Publish/Subscribe</h2>
 					<p>This is a pattern is a popular variation on the Observer pattern. It allows for a simple events system.</p>
 				</section>
 
 				<section>
-					<p>In our case we will use a very simple implementation of this pattern. And object that has a <code>subscribe</code> and <code>publish</code> method.</p>
+					<p>In our case we will use a very simple implementation of this pattern. An object that has a <code>subscribe</code> and <code>publish</code> method.</p>
+				</section>
+
+				<section>
+					<div style="position: relative;">
+						<p class="arrows" style="font-size: 100px; position: absolute; top: -150px; left: 50%;transform: translateX(-50%);"><span class="fragment" data-fragment-index="6">↓</span> &nbsp; <span class="fragment" data-fragment-index="5">←</span> &nbsp; <span class="fragment" data-fragment-index="4">←</span> &nbsp;<span class="fragment" data-fragment-index="3">↑</span></p>
+						<p style="font-size:100px;">📰&nbsp;&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="1">→</span>&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="2">→</span>&nbsp;&nbsp;📥</p>
+						<p style="font-size:100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="1">↘</span>︎&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="2">→</span>&nbsp;&nbsp;📥</p>
+					</div>
+
 				</section>
 
 				<section>
@@ -276,11 +299,100 @@
 				</section>
 
 				<section>
+					<h3>Core concept</h3>
+					<ul>
+						<li>Allows you to register UI components to events</li>
+						<li>Decouples data from views</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="imgs/flux-logo.png" alt="" width="300">
 					<h2>Flux</h2>
 				</section>
 
 				<section>
-					<p>A pattern introduced to help solve state issues in their app.</p>
+					<p>A pattern introduced by Facebook to help solve state issues in their app. Famously the chat notification bug. </p>
+				</section>
+
+				<section>
+					<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/nYkdrAPrdcw?list=PLb0IAmt7-GS188xDYE-u1ShQmFFGbrk0v&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h3>Flux is just a pattern, <br/>it is not specific to React.</h3>
+				</section>
+
+				<section>
+					<p>Introduces <strong>Stores</strong>, and <strong>Actions</strong>, and a <strong>Dispatcher</strong>(think publisher).</p>
+					<p>The idea is you dispatch actions to your stores, the stores will handle the data change and your components will listen for changes in the store.</p>
+				</section>
+
+				<section>
+					<p>📡 Dispatcher ➡︎ 🗄 Store ➡︎ 📊 Component ➡︎ 💥 Action</p>
+				</section>
+
+				<section>
+					<h2>Stores</h2>
+					<p>The idea of a global store is great, because now we are starting to get to a point where the data lives in one place, and you can have many components that work with that data, and get it from your stores.</p>
+				</section>
+
+				<section>
+					<p>There are many Stores in the Flux pattern. It is up to you as to how you implement your Store.</p>
+				</section>
+
+				<section>
+					<p>It centralizes our data, and decouples <br/>it from a specific component.</p>
+				</section>
+
+				<section>
+					<img src="imgs/crime_wall.jpg" alt="">
+				</section>
+
+				<section>
+					<h2>Dispatch an Action</h2>
+<pre><code class="language-javascript">
+  dispatcher.dispatch({
+    type: 'INCREASE',
+    //payload: {}
+  });
+
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Subscribe to a store</h2>
+<pre><code class="language-javascript">
+  CounterStore.on('change',addToCounter);
+
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Register your action handler</h2>
+<pre><code class="language-javascript">
+  dispatcher.register(CounterStore.actions);
+
+</code></pre>
+				</section>
+
+				<section>
+<pre><code class="language-javascript">
+  switch(action.type) {
+    case "INCREASE": {
+      this.addToCount()
+      break;
+    }
+    case "DECREASE": {
+      this.removeFromCount();
+      break;
+    }
+    default: {
+      console.log('🔥 whoops not an action I know yet 🔥');
+    }
+  }
+
+</code></pre>
 				</section>
 
 				<section data-background="#ffc107">
@@ -288,9 +400,103 @@
 					
 				</section>
 
+				<section>
+					<p>Breaking the data out of our components helps us to keep a loosely coupled system.</p>
+				</section>
+
+				<section>
+					<p>All actions are passed to all stores, so that we can act on any action in any store.</p>
+				</section>
+
+				<section>
+					<p>With Flux we have many stores that use actions to determine state change, we dispatch these actions with our dispatcher.</p>
+				</section>
+
+				<section>
+					<h2>Law of Demeter</h2>
+					<p>This is referred to as the <em>Principle of Least Knowledge</em>. The idea of having a decoupled system is the embodiment of this idea.</p>
+				</section>
+
+				<section>
+					<img src="imgs/logo.png" alt="" width="300">
+					<h2>Redux</h2>
+				</section>
+
+				<section>
+					<p>Redux takes ideas from Flux and introduces a few new things, while changing some others.</p>
+				</section>
+
+				<section>
+					<p>One key change is that your state now lives in ONE store, and we introduce this idea of a Reducer.</p>
+				</section>
+
+				<section>
+					<p>The Reducers take your actions and make the states changes on the store for you.</p>
+				</section>
+
+				<section>
+					<p>The store is now just a simple object that contains our data.</p>
+				</section>
+
+				<section>
+					<p>Another key idea that is introduced into Redux is Immutability. When we alter our state, we do not mutate it, but we take the existing state and create a new version of it.</p>
+				</section>
+
 				<section data-background="#9C27B0">
 					<iframe src="redux/index.html" frameborder="0" height="600" width="800"></iframe>
-					
+				</section>
+
+				<section>
+					<h3>Reducer</h3>
+<pre><code class="language-javascript">
+  export default function(state = 0, action) {
+    switch(action.type) {
+      case "INCREMENT": {
+        return state+=1;
+        break;
+      }
+      case "DECREMENT": {
+        return state-=1;
+        break;  
+      }
+      default: {
+        return state 
+      }
+    }
+  }
+
+</code></pre>
+				</section>
+
+				<section>
+					<h3>Creating a store</h3>
+<pre><code class="language-javascript">
+  app.store = createStore(counterReducer)
+
+</code></pre>
+				</section>
+
+				<section>
+					<h3>Dispatch an action</h3>
+<pre><code class="language-javascript">
+  app.store.dispatch({
+    type: "INCREMENT",
+    data: 1
+  });
+
+</code></pre>
+				</section>
+
+				<section>
+					<h3>Subscribe</h3>
+<pre><code class="language-javascript">
+  app.store.subscribe(() => {
+    document
+      .querySelector('.counter')
+      .innerHTML = app.store.getState();
+  });
+  
+</code></pre>
 				</section>
 
 				<section>

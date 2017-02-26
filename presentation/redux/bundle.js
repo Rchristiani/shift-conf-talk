@@ -1335,7 +1335,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 const app = {};
 
-app.store = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_redux__["a" /* createStore */])(__WEBPACK_IMPORTED_MODULE_1__counterReducer_js__["a" /* default */],0,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+app.store = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_redux__["a" /* createStore */])(__WEBPACK_IMPORTED_MODULE_1__counterReducer_js__["a" /* default */],window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 app.events = function() {
 	const add = document.getElementById('add');

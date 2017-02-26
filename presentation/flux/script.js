@@ -38,7 +38,7 @@ app.clickCounter = function() {
 	}
 	//When the change event is emitted from the store
 	//Update the count
-	CounterStore.on('change',addToCounter)
+	CounterStore.on('change',addToCounter);
 
 };
 
@@ -52,8 +52,8 @@ app.init = function() {
 	dispatcher.register(CounterStore.actions);
 	//This is used to update the count
 	CounterStore.on('change', () => {
-		document.querySelector('.counter').innerHTML = CounterStore.getCount();  
-	})
+		document.querySelector('.counter').innerHTML = CounterStore.getCount();
+	});
 };
 
 window.onload = app.init;

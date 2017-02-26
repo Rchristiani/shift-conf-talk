@@ -3,7 +3,7 @@ import counterReducer from './counterReducer.js';
 
 const app = {};
 
-app.store = createStore(counterReducer,0,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+app.store = createStore(counterReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 app.events = function() {
 	const add = document.getElementById('add');
@@ -41,9 +41,8 @@ app.init = function() {
 	app.events();
 	//Click Counter
 	app.clickCounter();
-	//
+	//Subscribe to an action.
 	app.store.subscribe(() => {
-		console.log(app.store.getState());
 		document.querySelector('.counter').innerHTML = app.store.getState();
 	});
 };
