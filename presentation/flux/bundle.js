@@ -976,7 +976,7 @@ app.clickCounter = function() {
 	}
 	//When the change event is emitted from the store
 	//Update the count
-	__WEBPACK_IMPORTED_MODULE_1__counterStore_js__["a" /* default */].on('change',addToCounter)
+	__WEBPACK_IMPORTED_MODULE_1__counterStore_js__["a" /* default */].on('change',addToCounter);
 
 };
 
@@ -990,8 +990,8 @@ app.init = function() {
 	dispatcher.register(__WEBPACK_IMPORTED_MODULE_1__counterStore_js__["a" /* default */].actions);
 	//This is used to update the count
 	__WEBPACK_IMPORTED_MODULE_1__counterStore_js__["a" /* default */].on('change', () => {
-		document.querySelector('.counter').innerHTML = __WEBPACK_IMPORTED_MODULE_1__counterStore_js__["a" /* default */].getCount();  
-	})
+		document.querySelector('.counter').innerHTML = __WEBPACK_IMPORTED_MODULE_1__counterStore_js__["a" /* default */].getCount();
+	});
 };
 
 window.onload = app.init;

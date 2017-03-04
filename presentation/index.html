@@ -65,14 +65,18 @@
 					<img src="imgs/RyanVideo_ES6_Title_02.jpg">
 				</section>
 				
-				<section data-background="#ffdb66" data-background-transition="zoom">
+				<section data-background="#fedf79" data-background-transition="zoom">
 					<img src="imgs/lets-code-along.png" alt="">
+				</section>
+
+				<section data-background="#d12026" data-background-transition="zoom" class="bg-color">
+					<h2>React At HackerYou</h2>
 				</section>
 
 				<section>
 					<ul>
 						<li>What is a design pattern</li>
-						<li>Look some common patterns</li>
+						<li>Explore some common patterns</li>
 						<li>Pub/Sub</li>
 						<li>Flux</li>
 						<li>Redux</li>
@@ -81,7 +85,7 @@
 
 				<section>
 					<h2>What is a design pattern?</h2>
-					<p>Design pattern is a reusable solution to a common problem. </p>
+					<p>A design pattern is a reusable solution to a common problem. </p>
 				</section>
 
 				<section>
@@ -90,7 +94,7 @@
 				</section>
 
 				<section>
-					<p>Christopher Alexander is actually an Architect. We is considered to be the father of the pattern language movement.</p>
+					<p>Christopher Alexander is actually an Architect. He is considered to be the father of the pattern language movement.</p>
 				</section>
 				
 				<section>
@@ -98,7 +102,7 @@
 				</section>
 
 				<section>
-					<p>These patterns help us identify problems and pick the appropriate solution. Understanding these patterns allow us to pick from a catalog of trusted abstractions.</p>
+					<p>Patterns help us identify problems and pick appropriate solutions, allowing us to pick from a catalog of trusted abstractions.</p>
 				</section>
 					
 				<section>
@@ -116,7 +120,34 @@
 				</section>
 
 				<section>
-					<p>All the examples in the book at in C++/SmallTalk, so unless you know those languages, or the concepts behind them, it might be hard to reason about!</p>
+					<p>The book breaks the design patterns into three types.</p>
+				</section>
+
+				<section>
+					<h2>Creational</h2>
+					<ul  style="list-style: none; margin: 0; text-align: center;">
+						<li class="fragment" data-fragment-index="1">Factory</li>
+						<li class="fragment" data-fragment-index="2">Singleton</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Structural</h2>
+					<ul  style="list-style: none; margin: 0; text-align: center;">
+						<li class="fragment" data-fragment-index="1">Facade</li>
+						<li class="fragment" data-fragment-index="2">Decorator</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Behavioral</h2>
+					<ul  style="list-style: none; margin: 0; text-align: center;">
+						<li class="fragment" data-fragment-index="1">Observer</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>However all the examples in the book at in C++/SmallTalk, so unless you know these languages, it might be hard to reason about!</p>
 				</section>
 				
 				<section>
@@ -124,7 +155,7 @@
 				</section>
 
 				<section>
-					<h2>These patterns are everywhere</h2>
+					<h2>Patterns are everywhere</h2>
 				</section>
 
 				<section>
@@ -133,7 +164,7 @@
 				</section>
 
 				<section>
-					<p>Learning about these patterns can help <br/>you dissect larger patterns!</p>
+					<p>Learning these patterns can help <br/>us dissect and reason about larger patterns!</p>
 				</section>
 
 				<section>
@@ -144,7 +175,7 @@
 					<h3>Namespacing</h3>
 <pre><code class="language-javascript">
   const app = {};
-
+  app.users = [];
   app.events = function() {};
   app.init = function() {};
 
@@ -157,7 +188,7 @@
 				</section>
 
 				<section>
-					<ul style="list-style: none; padding: 0; text-align: center;">
+					<ul style="list-style: none; margin: 0; text-align: center;">
 						<li class="fragment">💥 Name clashes 💥</li>
 						<li class="fragment">☁️ Pollution of global scope ☁️</li>
 						<li class="fragment">🍝 Solution to spagetti code 🍝</li>
@@ -184,7 +215,7 @@
 				</section>
 
 				<section>
-					<p>The Module pattern is a pattern we use in JavaScript that allows us to reduce global variables and contain the implementation of our code hidden from the outside world.</p>
+					<p>The Module pattern is a pattern we use in JavaScript to allow us to emulate privacy.</p>
 				</section>
 
 				<section>
@@ -210,7 +241,7 @@
 				</section>
 
 				<section>
-					<ul style="list-style: none; padding: 0; text-align: center;">
+					<ul style="list-style: none; margin: 0; text-align: center;">
 						<li class="fragment">🕵️ Create privacy 🕵️</li>
 						<li class="fragment">🎛 Define our interface 🎛</li>
 					</ul>
@@ -225,8 +256,12 @@
 				</section>
 
 				<section>
+					<img src="imgs/jeopardy.jpg" alt="">
+				</section>
+
+				<section>
 					<h2>Publish/Subscribe</h2>
-					<p>This is a pattern is a popular variation on the Observer pattern. It allows for a simple events system.</p>
+					<p>This pattern is a popular variation on the Observer pattern. It allows for a simple events system.</p>
 				</section>
 
 				<section>
@@ -235,9 +270,9 @@
 
 				<section>
 					<div style="position: relative;">
-						<p class="arrows" style="font-size: 100px; position: absolute; top: -150px; left: 50%;transform: translateX(-50%);"><span class="fragment" data-fragment-index="6">↓</span> &nbsp; <span class="fragment" data-fragment-index="5">←</span> &nbsp; <span class="fragment" data-fragment-index="4">←</span> &nbsp;<span class="fragment" data-fragment-index="3">↑</span></p>
+						<p class="arrows" style="color:#f04133;font-size: 100px; position: absolute; top: -150px; left: 50%;transform: translateX(-50%);"><span class="fragment" data-fragment-index="6">↓</span> &nbsp; <span class="fragment" data-fragment-index="5">←</span> &nbsp; <span class="fragment" data-fragment-index="4">←</span> &nbsp;<span class="fragment" data-fragment-index="3">↑</span></p>
 						<p style="font-size:100px;">📰&nbsp;&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="1">→</span>&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="2">→</span>&nbsp;&nbsp;📥</p>
-						<p style="font-size:100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="1">↘</span>︎&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="2">→</span>&nbsp;&nbsp;📥</p>
+						<p style="font-size:100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="1">↘</span>︎&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="2">→</span>📥</p>
 					</div>
 
 				</section>
@@ -278,6 +313,10 @@
 				<section data-background="#00bcd4">
 					<iframe src="pubsub/index.html" frameborder="0" height="600" width="800"></iframe>
 				</section>
+
+				<section>
+					<h2>Hooking it up</h2>
+				</section>
 				
 				<section>
 					<h3>Subscribe to an action</h3>
@@ -302,7 +341,7 @@
 					<h3>Core concept</h3>
 					<ul>
 						<li>Allows you to register UI components to events</li>
-						<li>Decouples data from views</li>
+						<li>Starts to decouple data from views</li>
 					</ul>
 				</section>
 
@@ -312,7 +351,7 @@
 				</section>
 
 				<section>
-					<p>A pattern introduced by Facebook to help solve state issues in their app. Famously the chat notification bug. </p>
+					<p>A pattern introduced by Facebook to help solve state <br />issues in their app. Famously this helped solve the chat notification bug. </p>
 				</section>
 
 				<section>
@@ -324,21 +363,41 @@
 				</section>
 
 				<section>
-					<p>Introduces <strong>Stores</strong>, and <strong>Actions</strong>, and a <strong>Dispatcher</strong>(think publisher).</p>
-					<p>The idea is you dispatch actions to your stores, the stores will handle the data change and your components will listen for changes in the store.</p>
+					<p>It promotes a single directional data flow.</p>
 				</section>
 
 				<section>
-					<p>📡 Dispatcher ➡︎ 🗄 Store ➡︎ 📊 Component ➡︎ 💥 Action</p>
+					<p>Introduces <strong>Stores</strong>, and <strong>Actions</strong>, and a <strong>Dispatcher</strong>(think publisher).</p>
+					<p>The idea is you <strong>dispatch actions</strong> to your <strong>stores</strong>, the <strong>stores</strong> will handle the data change and your components will listen for changes in the store.</p>
+				</section>
+
+				<section>
+					<p>📡 Dispatcher ➡︎ 🗄 Stores ➡︎ 📊 Component ➡︎ 💥 Action</p>
 				</section>
 
 				<section>
 					<h2>Stores</h2>
-					<p>The idea of a global store is great, because now we are starting to get to a point where the data lives in one place, and you can have many components that work with that data, and get it from your stores.</p>
+					<p>The idea of global stores is great, because now we are starting to get the data to live in a specific location, and you can have many components that work with on that data.</p>
 				</section>
 
 				<section>
 					<p>There are many Stores in the Flux pattern. It is up to you as to how you implement your Store.</p>
+				</section>
+
+				<section>
+<pre><code class="language-javascript">
+  class CounterStore extends EventEmitter {
+    constructor() {
+      super();
+      //Set up initial data
+      this.counter = 0;
+      //bind actions method
+      this.actions = this.actions.bind(this);
+    }
+    //...
+  }
+
+</code></pre>
 				</section>
 
 				<section>
@@ -363,7 +422,7 @@
 				<section>
 					<h2>Subscribe to a store</h2>
 <pre><code class="language-javascript">
-  CounterStore.on('change',addToCounter);
+  CounterStore.on('change',() => { /*...*/ }));
 
 </code></pre>
 				</section>
@@ -378,22 +437,34 @@
 
 				<section>
 <pre><code class="language-javascript">
-  switch(action.type) {
-    case "INCREASE": {
-      this.addToCount()
-      break;
-    }
-    case "DECREASE": {
-      this.removeFromCount();
-      break;
-    }
-    default: {
-      console.log('🔥 whoops not an action I know yet 🔥');
+  actions(action) {
+    switch(action.type) {
+      case "INCREASE": {
+        this.addToCount()
+        break;
+      }
+      case "DECREASE": {
+        this.removeFromCount();
+        break;
+      }
+      default: { /* ... */ }
     }
   }
 
 </code></pre>
 				</section>
+
+				<section>
+					<h2>Handle the action</h2>
+<pre><code class="language-javascript">
+  addToCount() {
+    this.counter++;
+    this.emit('change');
+  }
+
+</code></pre>
+				</section>
+
 
 				<section data-background="#ffc107">
 					<iframe src="flux/index.html" frameborder="0" height="600" width="800"></iframe>
@@ -401,6 +472,7 @@
 				</section>
 
 				<section>
+					<h2>Again...</h2>
 					<p>Breaking the data out of our components helps us to keep a loosely coupled system.</p>
 				</section>
 
@@ -409,12 +481,13 @@
 				</section>
 
 				<section>
-					<p>With Flux we have many stores that use actions to determine state change, we dispatch these actions with our dispatcher.</p>
+					<h2>Law of Demeter</h2>
+					<p>This is referred to as the <em>Principle of Least Knowledge</em>. The idea of having a decoupled system is the embodiment of this idea.</p>
 				</section>
 
 				<section>
-					<h2>Law of Demeter</h2>
-					<p>This is referred to as the <em>Principle of Least Knowledge</em>. The idea of having a decoupled system is the embodiment of this idea.</p>
+					<h2>Only talk to your friends</h2>
+					<p>Objects should only talk to their friends, not friends of friends. So in our case our components only talk to the stores for data.</p>
 				</section>
 
 				<section>
@@ -427,19 +500,15 @@
 				</section>
 
 				<section>
-					<p>One key change is that your state now lives in ONE store, and we introduce this idea of a Reducer.</p>
+					<p>One key change is that our state now lives in ONE store, and we introduce this idea of a Reducer.</p>
 				</section>
 
 				<section>
-					<p>The Reducers take your actions and make the states changes on the store for you.</p>
+					<p>The Reducers take all actions and make the states changes on the store for you.</p>
 				</section>
 
 				<section>
 					<p>The store is now just a simple object that contains our data.</p>
-				</section>
-
-				<section>
-					<p>Another key idea that is introduced into Redux is Immutability. When we alter our state, we do not mutate it, but we take the existing state and create a new version of it.</p>
 				</section>
 
 				<section data-background="#9C27B0">
@@ -477,6 +546,10 @@
 				</section>
 
 				<section>
+					<p>Redux's store comes with three methods, <code>dispatch</code>, <code>subscribe</code>, <code>getState</code></p>
+				</section>
+
+				<section>
 					<h3>Dispatch an action</h3>
 <pre><code class="language-javascript">
   app.store.dispatch({
@@ -495,8 +568,66 @@
       .querySelector('.counter')
       .innerHTML = app.store.getState();
   });
+
+</code></pre>
+				</section>
+
+				<section>
+					<p>Another key idea that is introduced into Redux is Immutability. When we alter our state, we do not mutate it, but we take the existing state and create a new version of it.</p>
+				</section>
+
+				<section>
+					<p>It promotes the idea of function purity.</p>
+				</section>
+
+				<section>
+					<p>A pure function is a function that has no side affects, it does not alter the data passed to it. For example, arrays and objects, which are passed as a reference. A pure function would create a new array or object from it.</p>
+				</section>
+
+				<section>
+					<h2>Impure</h2>
+<pre><code class="language-javascript">
+  let total = 0;
+  function add(a,b) {
+    total = a + b;
+  }
+
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Pure</h2>
+<pre><code class="language-javascript">
+  function add(a,b) {
+    return a + b;
+  }
+  let total = add(2,3);
+
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Reducer</h2>
+<pre><code class="language-javascript">
+  case "INCREMENT": {
+    return state+=1;
+    break;
+  }
   
 </code></pre>
+				</section>
+
+				<section>
+					<p>Pure functions help us write more <br />maintainable/predictable code.</p>
+				</section>
+
+				<section>
+					<h2>RECAP</h2>
+					<ul style="text-align: center;list-style: none;margin: 0">
+						<li class="fragment" data-fragment-index=1>Patterns are everywhere</li>
+						<li class="fragment" data-fragment-index=2>Proven solutions to problems</li>
+						<li class="fragment" data-fragment-index=3>There is more than one way to control your data flow</li>
+					</ul>
 				</section>
 
 				<section>
