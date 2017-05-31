@@ -20,7 +20,7 @@ app.events = function() {
 	});
 	
 	subtract.addEventListener('click',() => {
-			//Dispatch an action, could be an action created
+		//Dispatch an action, could be an action created
 		//but just a simple object right now
 		dispatcher.dispatch({
 			type: 'DECREASE'

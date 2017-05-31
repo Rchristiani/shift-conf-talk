@@ -54,11 +54,22 @@
 
 				<section data-background="#d12026" data-background-transition="zoom" class="bg-color">
 					<h2>About Me</h2>
-					<p class="fragment">Head Instructor & Development Lead at HackerYou</p>
-					<p class="fragment">@Rchristiani on Twitter</p>
-					<p class="fragment">ryanchristiani.com</p>
-					<p class="fragment">letslearnes6.com</p>
-					<p class="fragment">NodeSchoolTO Organizer</p>
+				</section>
+				
+				<section>
+					<h1>🇨🇦 Ryan Christiani 👌</h1>
+				</section>
+
+				<section data-background-transition="zoom">
+					<img src="imgs/logo-hackeryou.svg" width="500px" alt="">
+				</section>
+
+				<section data-background-transition="zoom">
+					<img src="imgs/toronto_patch.jpg" alt="" style="width: 100%">
+				</section>
+				
+				<section data-background-transition="zoom">
+					<img src="imgs/turonno_patch.jpg" alt="" style="width: 100%">
 				</section>
 
 				<section data-background="#d12026" data-background-transition="zoom" class="bg-color">
@@ -69,10 +80,6 @@
 					<img src="imgs/lets-code-along.png" alt="">
 				</section>
 
-				<section data-background="#d12026" data-background-transition="zoom" class="bg-color">
-					<h2>React At HackerYou</h2>
-				</section>
-
 				<section>
 					<ul>
 						<li>What is a design pattern</li>
@@ -81,18 +88,6 @@
 						<li>Flux</li>
 						<li>Redux</li>
 					</ul>
-				</section>
-
-				<section>
-					<h2 style="text-transform: initial;">#FITCspotlightFlux</h2>
-				</section>
-
-				<section>
-					<h2 style="text-transform: initial;">#FITCspotlightRedux</h2>
-				</section>
-
-				<section>
-					<h2 style="text-transform: initial;">#FITCspotlightButton</h2>
 				</section>
 				
 				<section>
@@ -106,7 +101,7 @@
 				</section>
 
 				<section>
-					<p>Christopher Alexander is actually an Architect. He is considered to be the father of the pattern language movement.</p>
+					<p>Christopher Alexander is an Architect, and is considered to be the father of the pattern language movement.</p>
 				</section>
 				
 				<section>
@@ -114,7 +109,7 @@
 				</section>
 
 				<section>
-					<p>Patterns help us identify problems and pick appropriate solutions, allowing us to pick from a catalog of trusted abstractions.</p>
+					<p>Patterns help us identify problems and pick appropriate solutions, allowing us to select from a catalog of trusted abstractions.</p>
 				</section>
 					
 				<section>
@@ -159,7 +154,7 @@
 				</section>
 
 				<section>
-					<p>However all the examples in the book at in C++/SmallTalk, so unless you know these languages, it might be hard to reason about!</p>
+					<p>However all the examples in the book are in C++/SmallTalk, so unless you know these languages, it might be hard to reason about!</p>
 				</section>
 				
 				<section>
@@ -195,8 +190,8 @@
 				</section>
 				
 				<section>
-					<p>Using a single object to contain our application, we have using a simple pattern to prevent pollution of the global scope.</p>
-					<p>This pattern is simple but really solves some issues for us.</p>
+					<p>Using a single object to contain our application, we have a simple pattern to prevent pollution of the global scope.</p>
+					<p>This pattern is simple but solves some issues for us.</p>
 				</section>
 
 				<section>
@@ -268,10 +263,6 @@
 				</section>
 
 				<section>
-					<img src="imgs/jeopardy.jpg" alt="">
-				</section>
-
-				<section>
 					<h2>Publish/Subscribe</h2>
 					<p>This pattern is a popular variation on the Observer pattern. It allows for a simple events system.</p>
 				</section>
@@ -281,12 +272,9 @@
 				</section>
 
 				<section>
-					<div style="position: relative;">
-						<p class="arrows" style="color:#f04133;font-size: 100px; position: absolute; top: -150px; left: 50%;transform: translateX(-50%);"><span class="fragment" data-fragment-index="6">↓</span> &nbsp; <span class="fragment" data-fragment-index="5">←</span> &nbsp; <span class="fragment" data-fragment-index="4">←</span> &nbsp;<span class="fragment" data-fragment-index="3">↑</span></p>
-						<p style="font-size:100px;">📰&nbsp;&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="1">→</span>&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="2">→</span>&nbsp;&nbsp;📥</p>
-						<p style="font-size:100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="1">↘</span>︎&nbsp;&nbsp;<span class="arrows fragment" data-fragment-index="2">→</span>📥</p>
-					</div>
-
+					<h3>The idea</h3>
+					<p>You <code>publish</code> an action.</p>
+					<p>Many things can <code>subscribe</code> to actions.</p>
 				</section>
 
 				<section>
@@ -389,11 +377,11 @@
 
 				<section>
 					<h2>Stores</h2>
-					<p>The idea of global stores is great, because now we are starting to get the data to live in a specific location, and you can have many components that work with on that data.</p>
+					<p>The idea of global stores is nice, because now we are starting to get the data to live in a specific location, and you can have many components that work with on that data.</p>
 				</section>
 
 				<section>
-					<p>There are many Stores in the Flux pattern. It is up to you as to how you implement your Store.</p>
+					<p>There are many <strong>Stores</strong> in the Flux pattern. It is up to you as to how you implement your Store.</p>
 				</section>
 
 				<section>
@@ -413,7 +401,7 @@
 				</section>
 
 				<section>
-					<p>It centralizes our data, and decouples <br/>it from a specific component.</p>
+					<p>It centralizes our data, and decouples <br/>it from a living in specific component.</p>
 				</section>
 
 				<section>
@@ -484,17 +472,16 @@
 				</section>
 
 				<section>
-					<h2>Again...</h2>
+					<p><strong>All actions</strong> are passed to <strong>all stores</strong>, so that we can act on any action in any store.</p>
+				</section>
+
+				<section>
 					<p>Breaking the data out of our components helps us to keep a loosely coupled system.</p>
 				</section>
 
 				<section>
-					<p>All actions are passed to all stores, so that we can act on any action in any store.</p>
-				</section>
-
-				<section>
 					<h2>Law of Demeter</h2>
-					<p>This is referred to as the <em>Principle of Least Knowledge</em>. The idea of having a decoupled system is the embodiment of this idea.</p>
+					<p>This is referred to as the <em>Principle of Least Knowledge</em>. A decoupled system is the embodiment of this idea.</p>
 				</section>
 
 				<section>
@@ -512,7 +499,7 @@
 				</section>
 
 				<section>
-					<p>One key change is that our state now lives in ONE store, and we introduce this idea of a Reducer.</p>
+					<p>One key change is that our state now lives in <strong>ONE</strong> store, and we introduce this idea of a Reducer.</p>
 				</section>
 
 				<section>
@@ -622,7 +609,7 @@
 					<h2>Reducer</h2>
 <pre><code class="language-javascript">
   case "INCREMENT": {
-    return state+=1;
+    return state + 1;
     break;
   }
 
@@ -632,16 +619,31 @@
 				<section>
 					<p>Pure functions help us write more <br />maintainable/predictable code.</p>
 				</section>
+			
+				<section>
+					<h2>"prior art"</h2>
+				</section>
+
+				<section>
+					<img src="imgs/zoidberg.gif" alt="">
+				</section>
 
 				<section>
 					<h2>RECAP</h2>
-					<ul style="text-align: center;list-style: none;margin: 0">
-						<li class="fragment" data-fragment-index=1>Patterns are everywhere</li>
-						<li class="fragment" data-fragment-index=2>Proven solutions to problems</li>
-						<li class="fragment" data-fragment-index=3>There is more than one way to control your data flow</li>
-					</ul>
 				</section>
 
+				<section>
+					<h2>Patterns are everywhere.</h2>
+				</section>
+
+				<section>
+					<h2>Take a deeper look where the ideas come from.</h2>
+				</section>
+
+				<section>
+					<h2>You might learn a thing or two.</h2>
+				</section>
+		
 				<section>
 					<h1>Thanks! 👋</h1>
 				</section>
